@@ -24,7 +24,7 @@ $ conda activate mini-rag-app
 export PS1=export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$ "
 ```
 
-## Installation
+## Installation Libraries
 
 ### Install the required packages
 

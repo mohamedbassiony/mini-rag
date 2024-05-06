@@ -18,3 +18,8 @@ $ conda create -n mini-rag python=3.8
 ```bash
 $ conda activate mini-rag-app
 ```
+
+### (Optional) Setup your command line interface for better readability
+```bash
+export PS1=export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$ "
+```

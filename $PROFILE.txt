@@ -1,0 +1,3 @@
+function prompt {
+  "(`$env:CONDA_DEFAULT_ENV) PS $PWD> "
+}

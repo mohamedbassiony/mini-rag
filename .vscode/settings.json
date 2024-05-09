@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "\"python.terminal.activateEnvironment\": true"
+    ]
+}

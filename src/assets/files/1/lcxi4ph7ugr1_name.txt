@@ -1,0 +1,58 @@
+What is RAG?
+RAG, or Retrieval Augmented Generation, is a technique that combines the capabilities of a pre-trained large language model with an external data source. This approach combines the generative power of LLMs like GPT-3 or GPT-4 with the precision of specialized data search mechanisms, resulting in a system that can offer nuanced responses.
+
+This article explores retrieval augmented generation in more detail, giving some practical examples and applications, as well as some resources to help you learn more about LLMs. To get started, check out our course on mastering LLM concepts. You can also view our code-along below onRetrieval Augmented Generation with PineCone.
+
+Why Use RAG to Improve LLMs? An Example
+To better demonstrate what RAG is and how the technique works, let’s consider a scenario that many businesses today face.
+
+Imagine you are an executive for an electronics company that sells devices like smartphones and laptops. You want to create a customer support chatbot for your company to answer user queries related to product specifications, troubleshooting, warranty information, and more.
+
+You’d like to use the capabilities of LLMs like GPT-3 or GPT-4 to power your chatbot.
+
+However, large language models have the following limitations, leading to an inefficient customer experience:
+
+Lack of specific information
+Language models are limited to providing generic answers based on their training data. If users were to ask questions specific to the software you sell, or if they have queries on how to perform in-depth troubleshooting, a traditional LLM may not be able to provide accurate answers.
+
+This is because they haven’t been trained on data specific to your organization. Furthermore, the training data of these models have a cutoff date, limiting their ability to provide up-to-date responses.
+
+Hallucinations
+LLMs can “hallucinate,” which means that they tend to confidently generate false responses based on imagined facts. These algorithms can also provide responses that are off-topic if they don’t have an accurate answer to the user’s query, leading to a bad customer experience.
+
+Generic responses
+Language models often provide generic responses that aren’t tailored to specific contexts. This can be a major drawback in a customer support scenario since individual user preferences are usually required to facilitate a personalized customer experience.
+
+RAG effectively bridges these gaps by providing you with a way to integrate the general knowledge base of LLMs with the ability to access specific information, such as the data present in your product database and user manuals. This methodology allows for highly accurate and reliable responses that are tailored to your organization’s needs.
+
+How Does RAG Work?
+Now that you understand what RAG is, let’s look at the steps involved in setting up this framework:
+
+Step 1: Data collection
+You must first gather all the data that is needed for your application. In the case of a customer support chatbot for an electronics company, this can include user manuals, a product database, and a list of FAQs.
+
+Step 2: Data chunking
+Data chunking is the process of breaking your data down into smaller, more manageable pieces. For instance, if you have a lengthy 100-page user manual, you might break it down into different sections, each potentially answering different customer questions.
+
+This way, each chunk of data is focused on a specific topic. When a piece of information is retrieved from the source dataset, it is more likely to be directly applicable to the user’s query, since we avoid including irrelevant information from entire documents.
+
+This also improves efficiency, since the system can quickly obtain the most relevant pieces of information instead of processing entire documents.
+
+Step 3: Document embeddings
+Now that the source data has been broken down into smaller parts, it needs to be converted into a vector representation. This involves transforming text data into embeddings, which are numeric representations that capture the semantic meaning behind text.
+
+In simple words, document embeddings allow the system to understand user queries and match them with relevant information in the source dataset based on the meaning of the text, instead of a simple word-to-word comparison. This method ensures that the responses are relevant and aligned with the user’s query.
+
+If you’d like to learn more about how text data is converted into vector representations, we recommend exploring our tutorial on text embeddings with the OpenAI API.
+
+Step 4: Handling user queries
+When a user query enters the system, it must also be converted into an embedding or vector representation. The same model must be used for both the document and query embedding to ensure uniformity between the two.
+
+Once the query is converted into an embedding, the system compares the query embedding with the document embeddings. It identifies and retrieves chunks whose embeddings are most similar to the query embedding, using measures such as cosine similarity and Euclidean distance.
+
+These chunks are considered to be the most relevant to the user’s query.
+
+Step 5: Generating responses with an LLM
+The retrieved text chunks, along with the initial user query, are fed into a language model. The algorithm will use this information to generate a coherent response to the user’s questions through a chat interface.
+
+Here is a simplified flowchart summarizing how RAG works:

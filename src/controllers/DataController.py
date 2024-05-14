@@ -1,4 +1,5 @@
 from .BaseController import BaseController
+from .ProjectController import ProjectController
 from fastapi import UploadFile
 from models import ResponseSignal
 import re
@@ -34,7 +35,7 @@ class DataController(BaseController):
         new_file_path = os.path.join(
 
             project_path,
-            random_filename + "_" + cleaned_file_name
+            random_key + "_" + cleaned_file_name
 
         )
 
@@ -43,15 +44,17 @@ class DataController(BaseController):
             new_file_path = os.path.join(
 
                 project_path,
-                random_filename + "_" + cleaned_file_name
+                random_key + "_" + cleaned_file_name
 
             )      
         return new_file_path    
 
 
     def get_clean_file_name(self, orig_file_name: str):
+        # remove any special characters, except underscore and .
         cleaned_file_name = re.sub(r'[^\w.]', '', orig_file_name.strip())
 
+        # replace spaces with underscore
         cleaned_file_name = cleaned_file_name.replace(" ","_")
         
         return cleaned_file_name

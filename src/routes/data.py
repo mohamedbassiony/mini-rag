@@ -7,6 +7,7 @@ from controllers import DataController, ProjectController
 import aiofiles
 from models import ResponseSignal
 import logging
+
 logger  = logging.getLogger('uvicorn.error')
 
 data_router = APIRouter(
